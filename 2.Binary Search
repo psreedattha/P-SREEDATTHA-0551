@@ -1,0 +1,23 @@
+nums = []
+print("Enter 10 Numbers (in ascending order):")
+for i in range(10):
+    nums.insert(i, int(input()))
+print("Enter a Number to Search:")
+search = int(input())
+low = 0
+high = 9
+mid = (low+high)/2
+mid = int(mid)
+while low <= high:
+    if nums[mid]<search:
+        low = mid+1
+    elif nums[mid]==search:
+        print("Number Found at Position:")
+        print(mid+1)
+        break
+    else:
+        high = mid-1
+    mid = (low+high)/2
+    mid = int(mid)
+if low>high:
+    print("Number is not Found in the List")
